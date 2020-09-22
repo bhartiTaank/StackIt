@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +30,7 @@ class ListingActivity : AppCompatActivity() {
     }
 
     private fun getStackData() {
+        retry.visibility = View.GONE
         swipeLayout?.isRefreshing = true
         viewModel.getStackData()
     }
@@ -40,7 +40,14 @@ class ListingActivity : AppCompatActivity() {
     }
 
     private fun setupRecycler() {
-        stackAdapter = StackAdapter(mutableListOf())
+        stackAdapter = StackAdapter(mutableListOf()) {
+            val dialog =
+                WebViewDialogFragment.newInstance(it)
+            dialog.show(
+                supportFragmentManager,
+                WebViewDialogFragment::class.java.simpleName
+            )
+        }
         val linearLayoutManager = LinearLayoutManager(this)
         rvStackList.apply {
             layoutManager = linearLayoutManager

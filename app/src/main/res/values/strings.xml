@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">StackIT</string>
+    <string name="asked_by">By : %s</string>
+    <string name="answer_count">Total Answers : %d</string>
+    <string name="generic_error">Oops! something wrong happened, tap to retry</string>
+</resources>

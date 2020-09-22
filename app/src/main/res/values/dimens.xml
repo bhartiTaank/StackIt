@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="ssp_18">18sp</dimen>
+    <dimen name="sdp_5">5dp</dimen>
+    <dimen name="sdp_10">10dp</dimen>
+    <dimen name="ssp_16">16sp</dimen>
+    <dimen name="sdp_20">20dp</dimen>
+    <dimen name="ssp_24">24sp</dimen>
+    <dimen name="sdp_3">3dp</dimen>
+</resources>
